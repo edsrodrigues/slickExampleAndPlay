@@ -1,3 +1,10 @@
+Code from pedrorijo91 was changed to demonstrate only the use of slick and the construction of queries
+app/models/fullExample was full created by Eduardo Rodrigues
+
+
+
+Some of the code was created by:
+
 # play-slick3-steps example
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/740e586f17964c779ce3c146c272c560)](https://www.codacy.com)
 [![Build Status](https://travis-ci.org/pedrorijo91/play-slick3-steps.svg)](https://travis-ci.org/pedrorijo91/play-slick3-steps)
