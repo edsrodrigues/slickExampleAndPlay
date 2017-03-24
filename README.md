@@ -3,7 +3,7 @@ app/models/fullExample was full created by Eduardo Rodrigues
 
 
 
-Some of the code was created by:
+The rest of the code was created by:
 
 # play-slick3-steps example
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/740e586f17964c779ce3c146c272c560)](https://www.codacy.com)
