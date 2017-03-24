@@ -1,0 +1,92 @@
+@(userForm: Form[model.UserFormData],users : Seq[model.User])(implicit request: RequestHeader)
+@main() {
+
+<form id="user-data-form" role="form" action='@routes.ApplicationController.addUser()' method="post"
+      class="form-horizontal" align="center" autocomplete="off">
+
+    <fieldset class="user-fieldset">
+
+        <div class="user-form">
+            <label class="form-title" style="color: #F8741B; font-size: 22px;font-weight: bold; text-decoration:none">title</label>
+        </div>
+        <br/>
+        <table align="center" cellspacing="20">
+            <tr>
+                <td align="left">
+                    <div class="user-form" id="name_field_label">
+                        <div class="controls col-xs-offset-3 col-xs-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                <strong>name</strong> :
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td align="center">
+                    <div class="user-form" id="name_field_value">
+                        <div class="controls col-xs-offset-3 col-xs-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                <input type="text" id="name" name="name" value="" placeholder="First Name"
+                                       class="form-control input-lg" required>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <div class="user-form" id="contact_field_label">
+                        <div class="controls col-xs-offset-3 col-xs-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                <strong>contact</strong> :
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td align="center">
+                    <div class="user-form" id="contact_field_value">
+                        <div class="controls col-xs-offset-3 col-xs-9">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                <input type="tel" id="contact" name="contact" placeholder="contact"
+                                       class="form-control input-lg" required>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <div class="form-actions controls ynt-btn-xlarge">
+            <button type="submit" class="btn btn-primary ynt-btn-orange">Add</button>
+        </div>
+
+    </fieldset>
+</form>
+
+
+
+<div class="user-display">
+    <fieldset>
+        <legend align="center"><h3>Registered Users</h3></legend>
+        <table cellspacing="20">
+            <tr>
+                <th>costumer_id</th>
+                <th>name</th>
+                <th>contact</th>
+            </tr>
+            @for(user <- users){
+            <tr>
+                <td>@user.id</td>
+                <td>@user.name</td>
+                <td>@user.contact</td>
+                <td><a href="@routes.ApplicationController.deleteUser(user.id)">delete</a></td>
+            </tr>
+            }
+        </table>
+    </fieldset>
+</div>
+
+}
